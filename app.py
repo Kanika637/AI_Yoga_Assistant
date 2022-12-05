@@ -1,5 +1,4 @@
 from flask import Flask,render_template,Response
-from unittest import result
 import numpy as np
 import cv2
 import time 
@@ -284,7 +283,7 @@ def generate_frames(arr):
                 count=count+1
             elif(count>16):
                 print("entring")
-                print("accuracy: ", accuracyCaluclation(arr))
+                # print("accuracy: ", accuracyCaluclation(arr))
 
                 
                 
@@ -343,7 +342,18 @@ def charts():
     colors = ['#ff0000','#0000ff','#ffffe0','#008000','#800080','#FFA500', '#FF2554', ]
     return render_template('charts.html', values=accArray, labels=labels, colors=colors)
 
+# @app.route('/data', methods=['GET'])
+# def data(arr):
+#     accArray=accuracyCaluclation(arr)
+#     jsonData= json.dump(accArray)
+
+#     return jsonData;
+
+
 @app.route('/video')
+
+
+
 
 
 def video():
